@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: customer
+
+  logging:
+    level:
+      root: DEBUG
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/person
+    username: postgres
+    password: 9009
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      format_sql: true
+    show-sql: true
+
+  sleuth:
+    sampler:
+      probability: 1.0
+
+  zipkin:
+    base-url: http://localhost:9412/
+
+  eureka:
+    client:
+      service-url:
+        defaultZone: http://localhost:8761/eureka/
+    instance:
+      prefer-ip-address: true
+
+

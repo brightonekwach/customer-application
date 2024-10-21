@@ -1,0 +1,66 @@
+
+
+#server:
+#  port: 8081
+#
+#spring:
+#  application:
+#    name: Fraud
+#
+#    logging:
+#      level:
+#        root: DEBUG
+#
+#
+#
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/Fraud
+#    username: postgres
+#    password: 9009
+#    driver-class-name: org.postgresql.Driver
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#      dialect: org.hibernate.dialect.PostgreSQLDialect
+#      format_sql: true
+#    show-sql: true
+server:
+  port: 8081
+
+spring:
+  application:
+    name: Fraud
+
+  logging:
+    level:
+      root: DEBUG
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Fraud
+    username: postgres
+    password: 9009
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      format_sql: true
+    show-sql: true
+
+  sleuth:
+    sampler:
+      probability: 1.0
+
+  zipkin:
+    base-url: http://localhost:9412/
+
+    eureka:
+      client:
+        service-url:
+          defaultZone: http://localhost:8761/eureka/ # Update to your Eureka Server's URL
+      instance:
+        prefer-ip-address: true
+
+
